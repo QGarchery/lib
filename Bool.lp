@@ -29,9 +29,9 @@ with is_false false ↪ ⊤;
 symbol discr_false_true : π (false ≠ true) ≔
 begin
   assume H;
-  have f : π (is_true false);
-  rewrite H; refine top;
-  refine ⊥ₑ _ f;
+  have f : π (is_true false)
+  { rewrite H; refine top } ;
+    refine ⊥ₑ _ f ;
 end;
 
 // 𝔹oolean not
@@ -65,7 +65,7 @@ with _     and false ↪ false;
 
 // Conditional
 
-symbol if : 𝔹 → Π {a}, τ a → τ a → τ a;
+symbol if : 𝔹 → Π [a], τ a → τ a → τ a;
 
 rule if true  $x _ ↪ $x
 with if false _ $y ↪ $y;
